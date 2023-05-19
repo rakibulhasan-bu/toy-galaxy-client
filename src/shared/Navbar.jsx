@@ -1,6 +1,16 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../contexts/ContextProvider";
+
 const Navbar = () => {
-  const user = {};
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut()
+      .then((result) => console.log(result))
+      .catch((error) => console.log(error));
+  };
+  const photoUrl = `"${user?.photoURL}"`;
+  console.log(("src", photoUrl));
   return (
     <div className="container mx-auto flex items-center justify-between">
       <div className="h-20 w-64">
@@ -15,16 +25,22 @@ const Navbar = () => {
       <div className="flex items-center gap-x-8 text-xl">
         <NavLink to="/">Home</NavLink>
         <NavLink to="/allToys">All Toys</NavLink>
-        <NavLink to="/myToys">My Toys</NavLink>
-        <NavLink to="/addAToy">Add A Toy</NavLink>
         <NavLink to="/blogs">Blogs</NavLink>
+
         <div className="">
-          {user?.email ? (
-            <img
-              src=""
-              className="h-8 w-8 cursor-pointer rounded-full bg-grey"
-              title="user name"
-            />
+          {user ? (
+            <div className="flex items-center gap-x-8">
+              <NavLink to="/addAToy">Add A Toy</NavLink>
+              <NavLink to="/myToys">My Toys</NavLink>
+              <NavLink onClick={handleLogOut} to="/">
+                Log out
+              </NavLink>
+              <img
+                src={photoUrl}
+                className="h-8 w-8 cursor-pointer rounded-full bg-grey"
+                title={user?.displayName}
+              />
+            </div>
           ) : (
             <NavLink to="/login">Log in</NavLink>
           )}
