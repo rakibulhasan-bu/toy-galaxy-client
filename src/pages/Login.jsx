@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { useContext, useState } from "react";
@@ -6,12 +6,16 @@ import { AuthContext } from "../contexts/ContextProvider";
 
 const Login = () => {
   const [hide, setHide] = useState(true);
-  const { googleSignUp, signIn } = useContext(AuthContext);
+  const { googleSignUp, signIn, setUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   const handleGoogleSignIn = () => {
     googleSignUp()
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        setUser(user);
+        navigate(from, { replace: true });
       })
       .catch((error) => console.log(error));
   };
@@ -22,7 +26,8 @@ const Login = () => {
       .then((result) => {
         const loggedUser = result.user;
         reset();
-        console.log(loggedUser);
+        setUser(loggedUser);
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         const errorMessage = error.message;

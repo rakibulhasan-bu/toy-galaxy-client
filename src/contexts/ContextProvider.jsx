@@ -17,14 +17,18 @@ const provider = new GoogleAuthProvider();
 
 const ContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const googleSignUp = () => {
+    setLoading(true);
     return signInWithPopup(auth, provider);
   };
   const registerAccount = (email, password) => {
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
   const signIn = (email, password) => {
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
@@ -36,6 +40,7 @@ const ContextProvider = ({ children }) => {
     const unSubscribe = onAuthStateChanged(auth, (loggedUser) => {
       console.log("tjis is i", loggedUser);
       setUser(loggedUser);
+      setLoading(false);
     });
     return () => unSubscribe();
   }, []);
@@ -48,6 +53,8 @@ const ContextProvider = ({ children }) => {
     auth,
     user,
     setUser,
+    loading,
+    setLoading,
   };
   return (
     <AuthContext.Provider value={contextInfo}>{children}</AuthContext.Provider>

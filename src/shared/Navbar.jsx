@@ -25,13 +25,13 @@ const Navbar = () => {
       <div className="flex items-center gap-x-8 text-xl">
         <NavLink to="/">Home</NavLink>
         <NavLink to="/allToys">All Toys</NavLink>
+        <NavLink to="/addAToy">Add A Toy</NavLink>
+        <NavLink to="/myToys">My Toys</NavLink>
         <NavLink to="/blogs">Blogs</NavLink>
 
         <div className="">
-          {user ? (
+          {user && user ? (
             <div className="flex items-center gap-x-8">
-              <NavLink to="/addAToy">Add A Toy</NavLink>
-              <NavLink to="/myToys">My Toys</NavLink>
               <NavLink onClick={handleLogOut} to="/">
                 Log out
               </NavLink>
