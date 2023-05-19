@@ -3,17 +3,17 @@
 @tailwind utilities;
 
 .active {
-  @apply font-medium;
+  @apply bg-gradient-to-r from-blue-400 to-blue-950 bg-clip-text font-semibold text-transparent;
 }
 @layer base {
   body {
     @apply bg-blue-50 leading-normal;
   }
-  .h3 {
-    @apply text-[22px] font-bold lg:text-[32px];
-  }
   .btn {
-    @apply flex h-[52px] items-center rounded-full bg-blue px-4 text-lg font-medium outline-none transition hover:bg-blue-hover;
+    @apply mb-2 mr-2 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-950 px-6 py-2.5 text-center text-white hover:bg-gradient-to-bl focus:outline-none;
+  }
+  .gradient {
+    @apply bg-gradient-to-r from-blue-400 to-blue-950 bg-clip-text font-semibold text-transparent;
   }
   .section {
     @apply py-12 lg:py-24;

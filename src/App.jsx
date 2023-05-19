@@ -7,6 +7,7 @@ const App = () => {
     <>
       <Navbar />
       <Outlet />
+      <div className="py-80"></div>
       <Footer />
       <ScrollRestoration />
     </>

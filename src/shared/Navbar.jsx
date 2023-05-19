@@ -3,7 +3,7 @@ const Navbar = () => {
   const user = {};
   return (
     <div className="container mx-auto flex items-center justify-between">
-      <div className="h-20 w-56">
+      <div className="h-20 w-64">
         <NavLink to="/">
           <img
             className="h-full w-full object-cover"
