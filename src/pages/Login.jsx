@@ -5,6 +5,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../contexts/ContextProvider";
 
 const Login = () => {
+  document.title = "Login - Toy Galaxy";
   const [hide, setHide] = useState(true);
   const { googleSignUp, signIn, setUser } = useContext(AuthContext);
   const navigate = useNavigate();

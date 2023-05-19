@@ -15,6 +15,7 @@ const Register = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
+    document.title = "Register - Toy Galaxy";
     const { name, email, password, photoUrl } = data;
     console.log(name, photoUrl);
     registerAccount(email, password)

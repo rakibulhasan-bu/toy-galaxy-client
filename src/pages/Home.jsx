@@ -1,4 +1,5 @@
 const Home = () => {
+  document.title = "Toy Galaxy";
   return (
     <div>
       <div className="">
