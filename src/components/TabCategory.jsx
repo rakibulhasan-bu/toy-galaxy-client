@@ -3,7 +3,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 const TabCategory = () => {
   return (
-    <div className="container mx-auto">
+    <div id="category" className="container mx-auto">
       <Tabs>
         <TabList className="flex items-center justify-center">
           <Tab>Title 1</Tab>

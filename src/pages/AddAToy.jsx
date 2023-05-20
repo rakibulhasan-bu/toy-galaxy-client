@@ -8,102 +8,105 @@ const AddAToy = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => console.log(data);
   return (
-    <div className="h-96 w-full bg-gradient-to-br from-cyan-200 to-blue-950">
-      <div className="flex w-full items-center justify-center">
-        <div className="absolute top-40 w-3/5 rounded-lg bg-white px-8 py-12 shadow-xl lg:px-20">
-          <p className="pb-6 text-center text-xl font-bold leading-7 text-gray-700 md:text-3xl">
-            Add Your Products to
-            <span className="gradient font-bold"> Toy Galaxy!</span>
-          </p>
+    <>
+      <div className="h-96 w-full bg-gradient-to-br from-cyan-200 to-blue-950">
+        <div className="flex w-full items-center justify-center">
+          <div className="absolute top-40 w-3/5 rounded-lg bg-white px-8 py-12 shadow-xl lg:px-20">
+            <p className="pb-6 text-center text-xl font-bold leading-7 text-gray-700 md:text-3xl">
+              Add Your Products to
+              <span className="gradient font-bold"> Toy Galaxy!</span>
+            </p>
 
-          {/* form start here  */}
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
-            {/* this are hidden div  */}
-            <div className="hidden">
+            {/* form start here  */}
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
+              {/* this are hidden div  */}
+              <div className="hidden">
+                <input
+                  {...register("sellerName")}
+                  type="text"
+                  value={user && user?.displayName}
+                />
+                <input
+                  {...register("email")}
+                  type="email"
+                  value={user && user?.email}
+                />
+              </div>
+              <div className="grid grid-cols-1 gap-x-6 lg:grid-cols-2">
+                <input
+                  {...register("name")}
+                  aria-label="enter name"
+                  type="text"
+                  required
+                  placeholder="Product name"
+                  className="inputStyle"
+                />
+                <input
+                  {...register("price", { valueAsNumber: true })}
+                  aria-label="Product price"
+                  type="number"
+                  required
+                  placeholder="Product price"
+                  className="inputStyle"
+                />
+              </div>
+              <div className="grid grid-cols-1 gap-x-6 lg:grid-cols-2">
+                <input
+                  {...register("rating", { valueAsNumber: true })}
+                  aria-label="enter rating"
+                  type="number"
+                  required
+                  min="0"
+                  max="5"
+                  placeholder="Product rating"
+                  className="inputStyle"
+                />
+                <input
+                  {...register("quantity", { valueAsNumber: true })}
+                  aria-label="available quantity"
+                  type="number"
+                  required
+                  placeholder="Product quantity"
+                  className="inputStyle"
+                />
+              </div>
+              <div className="grid grid-cols-1 gap-x-6 lg:grid-cols-2">
+                <input
+                  {...register("photoUrl")}
+                  aria-label="enter photoUrl"
+                  type="url"
+                  required
+                  placeholder="Product Photo URL"
+                  className="inputStyle"
+                />
+                <select className="inputStyle" {...register("gender")}>
+                  <option value="female">female</option>
+                  <option value="male">male</option>
+                  <option value="other">other</option>
+                </select>
+              </div>
+              <div className="">
+                <textarea
+                  {...register("description")}
+                  required
+                  aria-label="product description"
+                  placeholder="Product detail description"
+                  className="inputStyle resize-none"
+                  cols="30"
+                  rows="10"
+                ></textarea>
+              </div>
               <input
-                {...register("sellerName")}
-                type="text"
-                value={user && user?.displayName}
+                type="submit"
+                value="SUBMIT"
+                className="btn mt-9 w-full font-semibold  text-white  focus:outline-none"
               />
-              <input
-                {...register("email")}
-                type="email"
-                value={user && user?.email}
-              />
-            </div>
-            <div className="grid grid-cols-1 gap-x-6 lg:grid-cols-2">
-              <input
-                {...register("name")}
-                aria-label="enter name"
-                type="text"
-                required
-                placeholder="Product name"
-                className="inputStyle"
-              />
-              <input
-                {...register("price", { valueAsNumber: true })}
-                aria-label="Product price"
-                type="number"
-                required
-                placeholder="Product price"
-                className="inputStyle"
-              />
-            </div>
-            <div className="grid grid-cols-1 gap-x-6 lg:grid-cols-2">
-              <input
-                {...register("rating", { valueAsNumber: true })}
-                aria-label="enter rating"
-                type="number"
-                required
-                min="0"
-                max="5"
-                placeholder="Product rating"
-                className="inputStyle"
-              />
-              <input
-                {...register("quantity", { valueAsNumber: true })}
-                aria-label="available quantity"
-                type="number"
-                required
-                placeholder="Product quantity"
-                className="inputStyle"
-              />
-            </div>
-            <div className="grid grid-cols-1 gap-x-6 lg:grid-cols-2">
-              <input
-                {...register("photoUrl")}
-                aria-label="enter photoUrl"
-                type="url"
-                required
-                placeholder="Product Photo URL"
-                className="inputStyle"
-              />
-              <select className="inputStyle" {...register("gender")}>
-                <option value="female">female</option>
-                <option value="male">male</option>
-                <option value="other">other</option>
-              </select>
-            </div>
-            <div className="">
-              <textarea
-                {...register("description")}
-                required
-                aria-label="product description"
-                placeholder="Product detail description"
-                className="inputStyle resize-none"
-                cols="30"
-                rows="10"
-              ></textarea>
-            </div>
-            <input
-              type="submit"
-              value="SUBMIT"
-              className="btn mt-9 w-full font-semibold  text-white  focus:outline-none"
-            />
-          </form>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
+      <div className="py-72"></div>
+    </>
   );
 };
 
