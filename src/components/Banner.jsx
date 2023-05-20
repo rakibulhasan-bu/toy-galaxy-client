@@ -18,7 +18,7 @@ const Banner = () => {
 
             <p>
               <Link to="#category" className="btn text-lg">
-                See product&apos;s
+                choose Toy&apos;s
               </Link>
             </p>
           </div>

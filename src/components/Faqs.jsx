@@ -24,7 +24,7 @@ const Faqs = () => {
           <img
             src="https://res.cloudinary.com/dwx2jd8b1/image/upload/v1684578170/Website-assets/Toy%20Galaxy/AdobeStock_224196166_zqstcr.jpg"
             alt="Img of child with car toys"
-            className="h-full w-full rounded-lg"
+            className="h-full w-full rounded-lg object-cover"
           />
         </div>
 
