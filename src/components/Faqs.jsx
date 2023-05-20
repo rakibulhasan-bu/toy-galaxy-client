@@ -11,7 +11,7 @@ const Faqs = () => {
     <div className="px-4 py-9 md:px-6 md:pb-20 md:pt-16 lg:px-20 2xl:mx-auto">
       <div className="space-y-2 text-center">
         <h2 className="text-4xl font-semibold leading-10 text-gray-800">
-          Frequently Asked Questions
+          Frequently Asked <span className="gradient">Questions</span>
         </h2>
         <p className="text-gray-600">
           Here are few of the most frequently asked questions by our valuable

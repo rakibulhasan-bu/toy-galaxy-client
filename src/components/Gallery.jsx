@@ -1,100 +1,77 @@
 const Gallery = () => {
   const carsImage = [
-    "https://res.cloudinary.com/dwx2jd8b1/image/upload/v1684585532/Website-assets/Toy%20Galaxy/Lightning_Racer_cwkygm.jpg",
+    {
+      title: "Lightning Racer",
+      subTitle: "Supersonic Lightning Speedster",
+      img: "https://res.cloudinary.com/dwx2jd8b1/image/upload/v1684585532/Website-assets/Toy%20Galaxy/Lightning_Racer_cwkygm.jpg",
+    },
+    {
+      title: "Turbo Tornado",
+      subTitle: "Thrilling Turbocharged Tornado",
+      img: "https://res.cloudinary.com/dwx2jd8b1/image/upload/v1684602183/Website-assets/Toy%20Galaxy/Turbo_Tornado_u1hh6b.jpg",
+    },
+    {
+      title: "Monster Crusher",
+      subTitle: "Mighty Monster Crusher Machine",
+      img: "https://res.cloudinary.com/dwx2jd8b1/image/upload/v1684602263/Website-assets/Toy%20Galaxy/Monster_Crusher_vuyvei.jpg",
+    },
+    {
+      title: "Fire Blaster ",
+      subTitle: "Blazing Fire-Rescue Hero",
+      img: "https://res.cloudinary.com/dwx2jd8b1/image/upload/v1684602307/Website-assets/Toy%20Galaxy/Fire_Blaster_y35efl.jpg",
+    },
+    {
+      title: "LEGO Technic",
+      subTitle: "Ultra-Fast Speed Demon",
+      img: "https://res.cloudinary.com/dwx2jd8b1/image/upload/v1684602381/Website-assets/Toy%20Galaxy/LEGO_Technic_rkdqxt.jpg",
+    },
+    {
+      title: "Turbocharged Thunder",
+      subTitle: "Speedy Thunderbolt Racer",
+      img: "https://res.cloudinary.com/dwx2jd8b1/image/upload/v1684602446/Website-assets/Toy%20Galaxy/Turbocharged_Thunder_o25hvi.jpg",
+    },
+    // {
+    //   title: "Dino Roamer",
+    //   subTitle: "Roaring Dino Adventure Car",
+    //   img: "https://res.cloudinary.com/dwx2jd8b1/image/upload/v1684602581/Website-assets/Toy%20Galaxy/Dino_Roamer_xvd1yi.jpg",
+    // },
+    // {
+    //   title: "Rocket Racer",
+    //   subTitle: "Epic Rocket-Powered Speedster",
+    //   img: "https://res.cloudinary.com/dwx2jd8b1/image/upload/v1684602637/Website-assets/Toy%20Galaxy/Rocket_Racer_ovzx6n.jpg",
+    // },
   ];
   return (
     <section className="container mx-auto px-6 py-16">
-      <h1 className="text-center text-2xl font-semibold capitalize text-gray-800 ">
-        Car Craze Gallery
+      <h1 className="text-center text-2xl font-semibold capitalize text-gray-800 lg:text-4xl ">
+        Car Craze <span className="gradient">Gallery</span>
       </h1>
 
       <p className="mt-4 text-center text-gray-500 ">
         Explore Captivating Moments and Adventures in our Toy Galaxy Gallery
       </p>
 
-      <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 xl:mt-12 xl:grid-cols-4">
-        <div className="group h-96 cursor-pointer overflow-hidden rounded-lg bg-[url('https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80')] bg-cover">
-          <div className="flex h-full w-full flex-col justify-center bg-gray-800/60 px-8 py-4 opacity-0 backdrop-blur-sm transition-opacity duration-700 group-hover:opacity-100">
-            <h2 className="mt-4 text-xl font-semibold capitalize text-white">
-              Best website collections
-            </h2>
-            <p className="mt-2 text-lg uppercase tracking-wider text-blue-400 ">
-              Website
-            </p>
-          </div>
-        </div>
-        <div className="group h-96 cursor-pointer overflow-hidden rounded-lg bg-[url('https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80')] bg-cover">
-          <div className="flex h-full w-full flex-col justify-center bg-gray-800/60 px-8 py-4 opacity-0 backdrop-blur-sm transition-opacity duration-700 group-hover:opacity-100">
-            <h2 className="mt-4 text-xl font-semibold capitalize text-white">
-              Best website collections
-            </h2>
-            <p className="mt-2 text-lg uppercase tracking-wider text-blue-400 ">
-              Website
-            </p>
-          </div>
-        </div>
-        <div className="group h-96 cursor-pointer overflow-hidden rounded-lg bg-[url('https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80')] bg-cover">
-          <div className="flex h-full w-full flex-col justify-center bg-gray-800/60 px-8 py-4 opacity-0 backdrop-blur-sm transition-opacity duration-700 group-hover:opacity-100">
-            <h2 className="mt-4 text-xl font-semibold capitalize text-white">
-              Best website collections
-            </h2>
-            <p className="mt-2 text-lg uppercase tracking-wider text-blue-400 ">
-              Website
-            </p>
-          </div>
-        </div>
-        <div className="group h-96 cursor-pointer overflow-hidden rounded-lg bg-[url('https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80')] bg-cover">
-          <div className="flex h-full w-full flex-col justify-center bg-gray-800/60 px-8 py-4 opacity-0 backdrop-blur-sm transition-opacity duration-700 group-hover:opacity-100">
-            <h2 className="mt-4 text-xl font-semibold capitalize text-white">
-              Best website collections
-            </h2>
-            <p className="mt-2 text-lg uppercase tracking-wider text-blue-400 ">
-              Website
-            </p>
-          </div>
-        </div>
-        <div className="group h-72 cursor-pointer overflow-hidden rounded-lg bg-[url('https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80')] bg-cover">
-          <div className="flex h-full w-full flex-col justify-center bg-gray-800/60 px-8 py-4 opacity-0 backdrop-blur-sm transition-opacity duration-700 group-hover:opacity-100">
-            <h2 className="mt-4 text-xl font-semibold capitalize text-white">
-              Best website collections
-            </h2>
-            <p className="mt-2 text-lg uppercase tracking-wider text-blue-400 ">
-              Website
-            </p>
-          </div>
-        </div>
-        <div className="group h-96 cursor-pointer overflow-hidden rounded-lg bg-[url('https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80')] bg-cover">
-          <div className="flex h-full w-full flex-col justify-center bg-gray-800/60 px-8 py-4 opacity-0 backdrop-blur-sm transition-opacity duration-700 group-hover:opacity-100">
-            <h2 className="mt-4 text-xl font-semibold capitalize text-white">
-              Best website collections
-            </h2>
-            <p className="mt-2 text-lg uppercase tracking-wider text-blue-400 ">
-              Website
-            </p>
-          </div>
-        </div>
+      <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 xl:mt-12 xl:grid-cols-3">
+        {carsImage &&
+          carsImage.map((car, i) => (
+            <div key={i} className="relative flex h-72">
+              <img
+                alt="gallery"
+                className="absolute inset-0 h-full w-full rounded-lg object-cover object-center"
+                src={car.img}
+                loading="lazy"
+              />
+              <div className="relative z-10 flex w-full flex-col justify-center rounded-lg bg-gray-800/60 px-8 py-10 opacity-0 backdrop-blur-sm transition-opacity duration-700 hover:opacity-100">
+                <h2 className="text-3xl font-semibold capitalize text-white">
+                  {car.title}
+                </h2>
 
-        <div className="group h-96 cursor-pointer overflow-hidden rounded-lg bg-[url('https://images.unsplash.com/photo-1621609764180-2ca554a9d6f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80')] bg-cover">
-          <div className="flex h-full w-full flex-col justify-center bg-gray-800/60 px-8 py-4 opacity-0 backdrop-blur-sm transition-opacity duration-700 group-hover:opacity-100">
-            <h2 className="mt-4 text-xl font-semibold capitalize text-white">
-              Block of Ui kit collections
-            </h2>
-            <p className="mt-2 text-lg uppercase tracking-wider text-blue-400 ">
-              Ui kit
-            </p>
-          </div>
-        </div>
-
-        <div className="group h-96 cursor-pointer overflow-hidden rounded-lg bg-[url('https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')] bg-cover">
-          <div className="flex h-full w-full flex-col justify-center bg-gray-800/60 px-8 py-4 opacity-0 backdrop-blur-sm transition-opacity duration-700 group-hover:opacity-100">
-            <h2 className="mt-4 text-xl font-semibold capitalize text-white">
-              Ton’s of mobile mockup
-            </h2>
-            <p className="mt-2 text-lg uppercase tracking-wider text-blue-400 ">
-              Mockups
-            </p>
-          </div>
-        </div>
+                <p className="text-md mt-2 tracking-wider text-cyan-200">
+                  {car.subTitle}
+                </p>
+              </div>
+            </div>
+          ))}
       </div>
     </section>
   );
