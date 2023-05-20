@@ -11,7 +11,7 @@ export default {
         secondary: '#F59C0E',
         tertiary: '#352CC7',
         grey: '#ADADB4',
-        sky: '#B2D9EE',
+        skys: '#B2D9EE',
         darkblue: {
           DEFAULT: '#0D0D2B',
           secondary: '#252540',
