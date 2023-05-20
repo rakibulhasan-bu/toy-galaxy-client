@@ -18,6 +18,9 @@
   .inputStyle {
     @apply w-full rounded-lg bg-blue-100 py-3.5 pl-3 leading-none text-gray-800 focus:outline-none;
   }
+  .sticky {
+    @apply fixed left-0 top-0 bg-gradient-to-br from-blue-50 to-cyan-50 shadow-md;
+  }
   .section {
     @apply py-12 lg:py-24;
   }

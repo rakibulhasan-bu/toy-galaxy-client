@@ -8,7 +8,6 @@ const App = () => {
     <>
       <Navbar />
       <Outlet />
-      <div className="py-80"></div>
       <GoToTop />
       <Footer />
       <ScrollRestoration />
