@@ -1,9 +1,10 @@
 // import { useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import CarCard from "./CarCard";
 // import "react-tabs/style/react-tabs.css";
 const TabCategory = () => {
   return (
-    <div id="category" className="container mx-auto py-8">
+    <div id="category" className="container mx-auto pb-2 pt-8">
       <div className=" pb-8 ">
         <h1 className="text-center text-2xl font-semibold capitalize text-gray-800 lg:text-4xl ">
           Top Gear <span className="gradient">Showcase</span>
@@ -47,22 +48,43 @@ const TabCategory = () => {
             Construction Crew
           </Tab>
         </TabList>
-
-        <TabPanel>
-          <h2>Any content 1</h2>
-        </TabPanel>
-        <TabPanel>
-          <h2>Any content 2</h2>
-        </TabPanel>
-        <TabPanel>
-          <h2>Any content 3</h2>
-        </TabPanel>
-        <TabPanel>
-          <h2>Any content 4</h2>
-        </TabPanel>
-        <TabPanel>
-          <h2>Any content 5</h2>
-        </TabPanel>
+        <div className="py-12">
+          <TabPanel className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <CarCard />
+            <CarCard />
+            <CarCard />
+            <CarCard />
+            <CarCard />
+          </TabPanel>
+          <TabPanel className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <CarCard />
+            <CarCard />
+            <CarCard />
+            <CarCard />
+            <CarCard />
+          </TabPanel>
+          <TabPanel className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <CarCard />
+            <CarCard />
+            <CarCard />
+            <CarCard />
+            <CarCard />
+          </TabPanel>
+          <TabPanel className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <CarCard />
+            <CarCard />
+            <CarCard />
+            <CarCard />
+            <CarCard />
+          </TabPanel>
+          <TabPanel className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <CarCard />
+            <CarCard />
+            <CarCard />
+            <CarCard />
+            <CarCard />
+          </TabPanel>
+        </div>
       </Tabs>
     </div>
   );

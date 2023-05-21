@@ -17,7 +17,7 @@ html {
     @apply mb-2 mr-2 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-700 px-6 py-2.5 text-center text-white hover:bg-gradient-to-bl focus:outline-none;
   }
   .btnTab {
-    @apply rounded-full bg-gradient-to-br from-cyan-300 to-blue-700 px-6 py-2 text-lg font-semibold text-white;
+    @apply rounded-full bg-gradient-to-br from-cyan-300 to-blue-700 px-6 py-2 text-lg font-semibold text-white outline-none;
   }
   .gradient {
     @apply bg-gradient-to-r from-blue-400 to-blue-950 bg-clip-text font-semibold text-transparent;
