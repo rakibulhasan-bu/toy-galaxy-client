@@ -10,17 +10,17 @@ const PrivateRoute = ({ children }) => {
   if (loading) {
     return (
       <>
-        <div className="bg-gray-100">
-          <div className="bg-white px-4 py-12">
+        <div className="h-[90vh] bg-gray-100">
+          <div className="flex h-full flex-col items-center justify-center bg-white px-4 py-12">
             <div className="mx-auto flex justify-center">
               <div className="relative">
-                <div className="h-[160px] w-[160px] rounded-full border border-indigo-400" />
-                <div className="absolute right-2.5 top-2.5 h-[140px] w-[140px] rounded-full border border-indigo-400" />
+                <div className="h-[250px] w-[250px] rounded-full border border-indigo-400" />
+                <div className="absolute right-2.5 top-2.5 h-[230px] w-[230px] rounded-full border border-indigo-400" />
                 <div>
                   <svg
-                    className="absolute right-[26px] top-[22px] animate-spin"
-                    width={113}
-                    height={113}
+                    className="absolute right-[46px] top-[46px] animate-spin"
+                    width={153}
+                    height={153}
                     viewBox="0 0 113 113"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -36,8 +36,8 @@ const PrivateRoute = ({ children }) => {
                 </div>
               </div>
             </div>
-            <p className="mt-4 text-center text-base text-gray-600">
-              Your Request Is Being Loaded, Please Wait
+            <p className="mt-4 text-center text-xl font-medium text-gray-600">
+              Your Request Is Being Loaded, Please Wait...
             </p>
           </div>
         </div>

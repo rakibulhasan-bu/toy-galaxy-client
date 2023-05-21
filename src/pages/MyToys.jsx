@@ -9,9 +9,38 @@ const MyToys = () => {
   document.title = "My Toys - Toy Galaxy";
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
+  const [updateToy, setUpdateToy] = useState({});
   const [control, setControl] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const MySwal = withReactContent(Swal);
+
+  const handleModal = (myToy) => {
+    setShowModal(true);
+    setUpdateToy(myToy);
+  };
+
+  const handleToyUpdate = (updatedToy) => {
+    setShowModal(false);
+    fetch(`http://localhost:5000/updateToyInfo/${updatedToy.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updatedToy),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.modifiedCount) {
+          setControl(true);
+          MySwal.fire(
+            "Update successful!",
+            "Toy has been updated successfully.",
+            "success"
+          );
+        }
+      })
+      .catch((error) => console.log(error));
+  };
 
   const handleSearch = (event) => {
     event.preventDefault();
@@ -66,7 +95,13 @@ const MyToys = () => {
   };
   return (
     <section className="container mx-auto px-4 py-12">
-      {showModal && <UpdateToyModal setShowModal={setShowModal} />}
+      {showModal && (
+        <UpdateToyModal
+          updateToy={updateToy}
+          handleToyUpdate={handleToyUpdate}
+          setShowModal={setShowModal}
+        />
+      )}
       {/* these is title and subtitle part  */}
       <div className="py-2">
         <h1 className="text-center text-2xl font-semibold capitalize text-gray-800 lg:text-4xl ">
@@ -175,7 +210,6 @@ const MyToys = () => {
                   {myToys &&
                     myToys.map((myToy) => (
                       <tr key={myToy._id}>
-                        {console.log(myToy)}
                         {/* seller name document here  */}
                         <td className="whitespace-nowrap px-8 py-4 font-medium text-gray-700">
                           <div className="flex items-center gap-x-2">
@@ -246,7 +280,7 @@ const MyToys = () => {
                             </button>
 
                             <button
-                              onClick={() => setShowModal(true)}
+                              onClick={() => handleModal(myToy)}
                               className="text-gray-500 transition-colors duration-200 hover:text-yellow-500 focus:outline-none "
                             >
                               <svg
