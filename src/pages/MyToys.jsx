@@ -1,11 +1,17 @@
 import { useContext, useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
 import { AuthContext } from "../contexts/ContextProvider";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+import UpdateToyModal from "../components/UpdateToyModal";
 
 const MyToys = () => {
   document.title = "My Toys - Toy Galaxy";
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
+  const [control, setControl] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const MySwal = withReactContent(Swal);
 
   const handleSearch = (event) => {
     event.preventDefault();
@@ -25,20 +31,42 @@ const MyToys = () => {
       .then((res) => res.json())
       .then((result) => setMyToys(result))
       .catch((error) => console.log(error));
-  }, [user]);
+  }, [user, control]);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/deleteToy/${id}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .then((result) => console.log(result));
+    MySwal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/deleteToy/${id}`, {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((res) => res.json())
+          .then((result) => {
+            if (result.deletedCount) {
+              setControl((prev) => !prev);
+              MySwal.fire(
+                "Delete successful!",
+                "Toy has been deleted successfully.",
+                "success"
+              );
+            }
+          });
+      }
+    });
   };
   return (
     <section className="container mx-auto px-4 py-12">
+      {showModal && <UpdateToyModal setShowModal={setShowModal} />}
       {/* these is title and subtitle part  */}
       <div className="py-2">
         <h1 className="text-center text-2xl font-semibold capitalize text-gray-800 lg:text-4xl ">
@@ -58,7 +86,7 @@ const MyToys = () => {
           </h2>
 
           <span className="rounded-full bg-blue-100 px-3 py-1 text-xs text-blue-600 dark:bg-gray-800 dark:text-blue-400">
-            100 Toys
+            {myToys.length} Toys
           </span>
         </div>
         <form
@@ -199,7 +227,7 @@ const MyToys = () => {
                           <div className="flex items-center gap-x-6">
                             <button
                               onClick={() => handleDelete(myToy._id)}
-                              className="text-gray-500 transition-colors duration-200 hover:text-red-500 focus:outline-none dark:text-gray-300 dark:hover:text-red-500"
+                              className="text-gray-500 transition-colors duration-200 hover:text-red-500 focus:outline-none "
                             >
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -207,7 +235,7 @@ const MyToys = () => {
                                 viewBox="0 0 24 24"
                                 strokeWidth="1.5"
                                 stroke="currentColor"
-                                className="h-5 w-5"
+                                className="h-6 w-6"
                               >
                                 <path
                                   strokeLinecap="round"
@@ -217,14 +245,17 @@ const MyToys = () => {
                               </svg>
                             </button>
 
-                            <button className="text-gray-500 transition-colors duration-200 hover:text-yellow-500 focus:outline-none dark:text-gray-300 dark:hover:text-yellow-500">
+                            <button
+                              onClick={() => setShowModal(true)}
+                              className="text-gray-500 transition-colors duration-200 hover:text-yellow-500 focus:outline-none "
+                            >
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 strokeWidth="1.5"
                                 stroke="currentColor"
-                                className="h-5 w-5"
+                                className="h-6 w-6"
                               >
                                 <path
                                   strokeLinecap="round"

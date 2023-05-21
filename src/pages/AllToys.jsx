@@ -33,7 +33,7 @@ const AllToys = () => {
         </h2>
 
         <span className="rounded-full bg-blue-100 px-3 py-1 text-xs text-blue-600 dark:bg-gray-800 dark:text-blue-400">
-          100 Toys
+          {allToys.length} Toys
         </span>
       </div>
 
