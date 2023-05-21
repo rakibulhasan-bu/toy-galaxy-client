@@ -11,7 +11,7 @@ const Navbar = () => {
       .catch((error) => console.log(error));
   };
   const photoUrl = `"${user?.photoURL}"`;
-  console.log(("src", photoUrl));
+  // console.log(("src", photoUrl));
 
   useEffect(() => {
     const handleScroll = () => {

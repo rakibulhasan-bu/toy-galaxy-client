@@ -18,6 +18,7 @@ const provider = new GoogleAuthProvider();
 const ContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   const googleSignUp = () => {
     setLoading(true);
@@ -55,6 +56,8 @@ const ContextProvider = ({ children }) => {
     setUser,
     loading,
     setLoading,
+    error,
+    setError,
   };
   return (
     <AuthContext.Provider value={contextInfo}>{children}</AuthContext.Provider>

@@ -1,12 +1,41 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../contexts/ContextProvider";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 const AddAToy = () => {
   document.title = "Add A Toy - Toy Galaxy";
   const { user } = useContext(AuthContext);
-  console.log(user);
-  const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const MySwal = withReactContent(Swal);
+
+  const { register, handleSubmit, reset } = useForm();
+  const onSubmit = (data) => {
+    fetch("http://localhost:5000/addAToy", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.insertedId) {
+          MySwal.fire(
+            "Congratulations!",
+            "Your Toy has been successfully added to the marketplace.",
+            "success"
+          );
+        }
+        reset();
+      })
+      .catch((error) => {
+        MySwal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: { error },
+        });
+      });
+  };
   return (
     <>
       <div className="h-96 w-full bg-gradient-to-br from-cyan-200 to-blue-950">
@@ -79,10 +108,12 @@ const AddAToy = () => {
                   placeholder="Product Photo URL"
                   className="inputStyle"
                 />
-                <select className="inputStyle" {...register("gender")}>
-                  <option value="female">female</option>
-                  <option value="male">male</option>
-                  <option value="other">other</option>
+                <select className="inputStyle" {...register("subCategory")}>
+                  <option value="Speedy Racers">Speedy Racers</option>
+                  <option value="Monster Machines">Monster Machines</option>
+                  <option value="Rescue Heroes">Rescue Heroes</option>
+                  <option value="Everyday City Cars">Everyday City Cars</option>
+                  <option value="Construction Crew">Construction Crew</option>
                 </select>
               </div>
               <div className="">
@@ -99,7 +130,7 @@ const AddAToy = () => {
               <input
                 type="submit"
                 value="SUBMIT"
-                className="btn mt-9 w-full font-semibold  text-white  focus:outline-none"
+                className="btn mt-9 w-full cursor-pointer font-semibold text-white  focus:outline-none"
               />
             </form>
           </div>
