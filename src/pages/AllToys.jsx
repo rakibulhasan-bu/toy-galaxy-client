@@ -8,7 +8,7 @@ const AllToys = () => {
   const [allToys, setAllToys] = useState([]);
   // const { photoURL } = user;
   useEffect(() => {
-    fetch("http://localhost:5000/allToys")
+    fetch("http://localhost:5000/allToys/all")
       .then((res) => res.json())
       .then((result) => setAllToys(result))
       .catch((error) => console.log(error));
@@ -125,7 +125,9 @@ const AllToys = () => {
                           {/* view details button here  */}
                           <td className="whitespace-nowrap px-4 py-4 text-sm">
                             <button className="btn rounded-md px-2.5 py-1.5 text-sm">
-                              <Link to="/">View details</Link>
+                              <Link to={`/singleToy/${toys._id}`}>
+                                View details
+                              </Link>
                             </button>
                           </td>
                         </tr>

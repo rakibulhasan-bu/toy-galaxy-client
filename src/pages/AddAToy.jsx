@@ -109,11 +109,11 @@ const AddAToy = () => {
                   className="inputStyle"
                 />
                 <select className="inputStyle" {...register("subCategory")}>
-                  <option value="Speedy Racers">Speedy Racers</option>
-                  <option value="Monster Machines">Monster Machines</option>
-                  <option value="Rescue Heroes">Rescue Heroes</option>
-                  <option value="Everyday City Cars">Everyday City Cars</option>
-                  <option value="Construction Crew">Construction Crew</option>
+                  <option value="Speedy_Racers">Speedy Racers</option>
+                  <option value="Monster_Machines">Monster Machines</option>
+                  <option value="Rescue_Heroes">Rescue Heroes</option>
+                  <option value="Everyday_City_Cars">Everyday City Cars</option>
+                  <option value="Construction_Crew">Construction Crew</option>
                 </select>
               </div>
               <div className="">

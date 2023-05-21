@@ -9,6 +9,7 @@ import Blogs from "../pages/Blogs";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import PrivateRoute from "./PrivateRoute";
+import SingleToy from "../components/SingleToy";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <AddAToy />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/singleToy/:id",
+        element: (
+          <PrivateRoute>
+            <SingleToy />
           </PrivateRoute>
         ),
       },
