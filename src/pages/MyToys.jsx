@@ -7,12 +7,36 @@ const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
 
+  const handleSearch = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const searchText = form.search.value;
+    fetch(`http://localhost:5000/searchByToyName/${searchText}`)
+      .then((res) => res.json())
+      .then((result) => {
+        setMyToys(result);
+        form.reset();
+      })
+      .catch((error) => console.log(error));
+  };
+
   useEffect(() => {
     fetch(`http://localhost:5000/myToys/${user?.email}`)
       .then((res) => res.json())
       .then((result) => setMyToys(result))
       .catch((error) => console.log(error));
   }, [user]);
+
+  const handleDelete = (id) => {
+    fetch(`http://localhost:5000/deleteToy/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((result) => console.log(result));
+  };
   return (
     <section className="container mx-auto px-4 py-12">
       {/* these is title and subtitle part  */}
@@ -27,14 +51,33 @@ const MyToys = () => {
       </div>
 
       {/* these is upper heading part  */}
-      <div className="flex items-center gap-x-3">
-        <h2 className="text-lg font-medium text-gray-800 dark:text-white">
-          You added Products:
-        </h2>
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-x-3">
+          <h2 className="text-lg font-medium text-gray-800 dark:text-white">
+            You added Products:
+          </h2>
 
-        <span className="rounded-full bg-blue-100 px-3 py-1 text-xs text-blue-600 dark:bg-gray-800 dark:text-blue-400">
-          100 Toys
-        </span>
+          <span className="rounded-full bg-blue-100 px-3 py-1 text-xs text-blue-600 dark:bg-gray-800 dark:text-blue-400">
+            100 Toys
+          </span>
+        </div>
+        <form
+          onSubmit={handleSearch}
+          className="flex max-w-screen-sm space-y-0"
+        >
+          <input
+            className="inputStyle rounded-e-none py-2 pl-4"
+            placeholder="Search by toy name"
+            type="text"
+            name="search"
+            required
+          />
+          <input
+            type="submit"
+            value="Search"
+            className="btn cursor-pointer rounded-s-none px-3 py-1"
+          />
+        </form>
       </div>
 
       {/* these is main table section  */}
@@ -104,6 +147,7 @@ const MyToys = () => {
                   {myToys &&
                     myToys.map((myToy) => (
                       <tr key={myToy._id}>
+                        {console.log(myToy)}
                         {/* seller name document here  */}
                         <td className="whitespace-nowrap px-8 py-4 font-medium text-gray-700">
                           <div className="flex items-center gap-x-2">
@@ -124,36 +168,39 @@ const MyToys = () => {
                         </td>
                         {/* toy name document here  */}
                         <td className="whitespace-nowrap px-8 py-4 text-gray-600">
-                          <p>Monster Crusher</p>
+                          {myToy.name}
                         </td>
                         {/* toy image document here  */}
                         <td className="whitespace-nowrap px-8 py-4 text-gray-600">
                           <img
                             className="h-16 w-16 rounded-md object-cover"
-                            src="https://images.unsplash.com/photo-1531590878845-12627191e687?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
+                            src={myToy.photoUrl}
                             alt=""
                           />
                         </td>
                         {/* sub category document here  */}
                         <td className="whitespace-nowrap px-12 py-4 text-gray-600">
-                          Design Director
+                          {myToy.subCategory}
                         </td>
                         {/* price document here  */}
                         <td className="whitespace-nowrap px-4 py-4 text-gray-600">
-                          $599
+                          ${myToy.price}
                         </td>
                         {/* Rating document here  */}
                         <td className="whitespace-nowrap px-4 py-4 text-gray-600">
-                          5 *
+                          {myToy.rating}
                         </td>
                         {/* available Quantity document here  */}
                         <td className="whitespace-nowrap px-4 py-4 text-gray-600">
-                          <p>45</p>
+                          {myToy.quantity}
                         </td>
                         {/* view details button here  */}
                         <td className="whitespace-nowrap px-4 py-4 text-sm">
                           <div className="flex items-center gap-x-6">
-                            <button className="text-gray-500 transition-colors duration-200 hover:text-red-500 focus:outline-none dark:text-gray-300 dark:hover:text-red-500">
+                            <button
+                              onClick={() => handleDelete(myToy._id)}
+                              className="text-gray-500 transition-colors duration-200 hover:text-red-500 focus:outline-none dark:text-gray-300 dark:hover:text-red-500"
+                            >
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"

@@ -9,7 +9,7 @@ import Blogs from "../pages/Blogs";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import PrivateRoute from "./PrivateRoute";
-import SingleToy from "../components/SingleToy";
+import SingleToy from "../pages/SingleToy";
 
 const router = createBrowserRouter([
   {
