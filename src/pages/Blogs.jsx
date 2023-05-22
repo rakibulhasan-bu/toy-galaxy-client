@@ -36,7 +36,7 @@ const Blogs = () => {
       {/* these is blog body  */}
       <div
         data-aos="fade-up"
-        data-aos-duration="3000"
+        data-aos-duration="2000"
         className="py-8 lg:-mx-6 lg:flex"
       >
         <div className="lg:w-3/4 lg:px-6">
@@ -56,7 +56,7 @@ const Blogs = () => {
                   <h3 className="capitalize  text-blue-500">Blog Title</h3>
                   <Link
                     onClick={() => handleBlogPost(blog)}
-                    to="/blogs/singleBlog"
+                    to="/blogs"
                     className="mt-2 block font-medium text-gray-700 hover:text-gray-500 hover:underline dark:text-gray-400 "
                   >
                     {blog.title}

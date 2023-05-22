@@ -13,7 +13,7 @@ const Testimonials = () => {
       <div className="mx-auto mt-8 grid max-w-7xl grid-cols-1 gap-8 lg:grid-cols-2 xl:mt-10">
         <div
           data-aos="fade-right"
-          data-aos-duration="3000"
+          data-aos-duration="2000"
           className="rounded-lg bg-gradient-to-br from-cyan-200 to-blue-300 p-6  md:p-8"
         >
           <p className="leading-loose text-gray-900 ">
@@ -43,7 +43,7 @@ const Testimonials = () => {
 
         <div
           data-aos="fade-left"
-          data-aos-duration="3000"
+          data-aos-duration="2000"
           className="rounded-lg bg-gradient-to-br from-cyan-200 to-blue-300 p-6  md:p-8"
         >
           <p className="leading-loose text-gray-900 ">

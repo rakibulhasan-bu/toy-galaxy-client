@@ -23,14 +23,17 @@ const SingleToy = () => {
       .catch((error) => console.log(error));
   }, []);
   return (
-    <div className="container mx-auto flex flex-col gap-y-6 py-12">
+    <div
+      data-aos="fade-up"
+      data-aos-duration="2000"
+      className="container mx-auto flex flex-col gap-y-6 py-12"
+    >
       <h2 className="gradient text-center text-5xl font-semibold">{name}</h2>
       <div className="mx-auto h-[60vh] w-10/12">
         <img
           className="h-full w-full rounded-lg object-cover object-center"
           src={photoUrl}
           alt="car image"
-          loading="lazy"
         />
       </div>
       <div className="space-y-4 px-12 text-lg">

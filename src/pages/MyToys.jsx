@@ -257,11 +257,11 @@ const MyToys = () => {
                           ${myToy.price}
                         </td>
                         {/* Rating document here  */}
-                        <td className="whitespace-nowrap px-4 py-4 text-gray-600">
+                        <td className="whitespace-nowrap px-4 py-4 text-center text-gray-600">
                           {myToy.rating}
                         </td>
                         {/* available Quantity document here  */}
-                        <td className="whitespace-nowrap px-4 py-4 text-gray-600">
+                        <td className="whitespace-nowrap px-4 py-4 text-center text-gray-600">
                           {myToy.quantity}
                         </td>
                         {/* view details button here  */}

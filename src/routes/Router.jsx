@@ -56,7 +56,7 @@ const router = createBrowserRouter([
         element: <Blogs />,
         children: [
           {
-            path: "/blogs/singleBlog",
+            path: "/blogs",
             element: <SingleBlog />,
           },
           {

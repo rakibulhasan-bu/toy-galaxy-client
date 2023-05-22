@@ -6,7 +6,7 @@ const Banner = () => {
       <div className="items-center justify-between lg:flex lg:flex-row-reverse">
         <div
           data-aos="fade-left"
-          data-aos-duration="3000"
+          data-aos-duration="2000"
           className="w-full lg:w-1/2"
         >
           <div className="space-y-6 lg:max-w-2xl">
@@ -30,7 +30,7 @@ const Banner = () => {
 
         <div
           data-aos="fade-right"
-          data-aos-duration="3000"
+          data-aos-duration="2000"
           className="mt-6 flex w-full items-center justify-center lg:mt-0 lg:w-1/2"
         >
           <img

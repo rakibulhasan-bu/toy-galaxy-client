@@ -12,7 +12,11 @@ const UpdateToyModal = ({ setShowModal, updateToy, handleToyUpdate }) => {
       <div className="container mx-auto">
         <div className="flex h-full w-full items-center justify-center">
           {/* main div start here  */}
-          <div className="fixed w-10/12 overflow-y-auto rounded-md bg-white shadow sm:h-auto md:w-8/12 lg:w-1/2 2xl:w-2/5">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="2000"
+            className="fixed w-10/12 overflow-y-auto rounded-md bg-white shadow sm:h-auto md:w-8/12 lg:w-1/2 2xl:w-2/5"
+          >
             <div className="flex items-center justify-between rounded-t-md bg-cyan-100 px-4 py-4 md:px-8 md:py-2">
               <p className="text-lg font-semibold">
                 Update existing <span className="gradient">Toy info</span>

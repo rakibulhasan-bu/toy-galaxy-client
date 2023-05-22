@@ -19,7 +19,12 @@ const ContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-  const [blog, setBlog] = useState({});
+  const [blog, setBlog] = useState({
+    title: "r",
+    photoUrl:
+      "https://res.cloudinary.com/dwx2jd8b1/image/upload/v1684751709/Website-assets/Toy%20Galaxy/Screenshot_195_vijkwe.png",
+    description: "a",
+  });
 
   const googleSignUp = () => {
     setLoading(true);

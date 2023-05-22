@@ -1,11 +1,8 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../contexts/ContextProvider";
 
 const AllToys = () => {
   document.title = "All Toys - Toy Galaxy";
-  const { user } = useContext(AuthContext);
-  const { photoURL } = user || {};
   const [allToys, setAllToys] = useState([]);
   // const { photoURL } = user;
   useEffect(() => {
@@ -47,6 +44,9 @@ const AllToys = () => {
                 {/* table header  */}
                 <thead className="bg-gray-50 ">
                   <tr>
+                    <th className="py-3 pl-8 text-center font-normal text-gray-600">
+                      #
+                    </th>
                     <th
                       scope="col"
                       className="px-4 py-3 text-center font-normal text-gray-600"
@@ -90,22 +90,15 @@ const AllToys = () => {
                 {/* table body here  */}
                 <tbody className="divide-y divide-gray-200 bg-white">
                   {allToys &&
-                    allToys.map((toys) => {
+                    allToys.map((toys, i) => {
                       return (
                         <tr key={toys._id}>
                           {/* seller name document here  */}
-                          <td className="whitespace-nowrap py-4 pl-10 font-medium text-gray-700">
-                            <div className="inline-flex items-center gap-x-3">
-                              <img
-                                className="h-10 w-10 rounded-full object-cover"
-                                src={photoURL}
-                                alt=""
-                              />
-
-                              <h2 className="font-medium text-gray-800">
-                                {toys.sellerName}
-                              </h2>
-                            </div>
+                          <td className="whitespace-nowrap py-4 pl-8 font-medium text-gray-700">
+                            {i + 1}
+                          </td>
+                          <td className="whitespace-nowrap py-4 pl-10 text-gray-700">
+                            <h2 className="text-gray-800">{toys.sellerName}</h2>
                           </td>
                           {/* toy name document here  */}
                           <td className="whitespace-nowrap px-8 py-4 text-gray-600">
@@ -120,7 +113,7 @@ const AllToys = () => {
                             ${toys.price}
                           </td>
                           {/* available Quantity document here  */}
-                          <td className="whitespace-nowrap px-4 py-4 text-gray-600">
+                          <td className="whitespace-nowrap px-4 py-4 text-center text-gray-600">
                             {toys.quantity}
                           </td>
                           {/* view details button here  */}
