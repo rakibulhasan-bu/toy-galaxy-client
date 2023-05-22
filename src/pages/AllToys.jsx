@@ -5,10 +5,11 @@ import { AuthContext } from "../contexts/ContextProvider";
 const AllToys = () => {
   document.title = "All Toys - Toy Galaxy";
   const { user } = useContext(AuthContext);
+  const { photoURL } = user || {};
   const [allToys, setAllToys] = useState([]);
   // const { photoURL } = user;
   useEffect(() => {
-    fetch("http://localhost:5000/allToys/all")
+    fetch("https://toy-galaxy-server-two.vercel.app/allToys/all")
       .then((res) => res.json())
       .then((result) => setAllToys(result))
       .catch((error) => console.log(error));
@@ -97,7 +98,7 @@ const AllToys = () => {
                             <div className="inline-flex items-center gap-x-3">
                               <img
                                 className="h-10 w-10 rounded-full object-cover"
-                                src={`"${user?.photoURL}"`}
+                                src={photoURL}
                                 alt=""
                               />
 

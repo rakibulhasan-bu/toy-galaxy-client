@@ -8,6 +8,7 @@ const CarCard = () => {
           className="h-full w-full rounded-t-lg object-cover object-center transition duration-300 ease-in-out hover:scale-110"
           src="https://res.cloudinary.com/dwx2jd8b1/image/upload/v1684602581/Website-assets/Toy%20Galaxy/Dino_Roamer_xvd1yi.jpg"
           alt="product image"
+          loading="lazy"
         />
       </div>
 

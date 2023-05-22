@@ -9,7 +9,7 @@ const TabCategory = () => {
     setActiveTab(tabName);
   };
   useEffect(() => {
-    fetch(`http://localhost:5000/allToys/${activeTab}`)
+    fetch(`https://toy-galaxy-server-two.vercel.app/allToys/${activeTab}`)
       .then((res) => res.json())
       .then((result) => setToys(result))
       .catch((error) => console.log(error));
@@ -65,19 +65,39 @@ const TabCategory = () => {
           </Tab>
         </TabList>
         <div className="py-12">
-          <TabPanel className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <TabPanel
+            data-aos="fade-up"
+            data-aos-duration="3000"
+            className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4"
+          >
             {toys && toys.map((toy) => <CarCard key={toy._id} toy={toy} />)}
           </TabPanel>
-          <TabPanel className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <TabPanel
+            data-aos="fade-up"
+            data-aos-duration="3000"
+            className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4"
+          >
             {toys && toys.map((toy) => <CarCard key={toy._id} toy={toy} />)}
           </TabPanel>
-          <TabPanel className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <TabPanel
+            data-aos="fade-up"
+            data-aos-duration="3000"
+            className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4"
+          >
             {toys && toys.map((toy) => <CarCard key={toy._id} toy={toy} />)}
           </TabPanel>
-          <TabPanel className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <TabPanel
+            data-aos="fade-up"
+            data-aos-duration="3000"
+            className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4"
+          >
             {toys && toys.map((toy) => <CarCard key={toy._id} toy={toy} />)}
           </TabPanel>
-          <TabPanel className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <TabPanel
+            data-aos="fade-up"
+            data-aos-duration="3000"
+            className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4"
+          >
             {toys && toys.map((toy) => <CarCard key={toy._id} toy={toy} />)}
           </TabPanel>
         </div>

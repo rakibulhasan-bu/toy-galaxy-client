@@ -17,7 +17,7 @@ const SingleToy = () => {
   console.log(toy);
   const { id } = useParams();
   useEffect(() => {
-    fetch(`http://localhost:5000/singleToys/${id}`)
+    fetch(`https://toy-galaxy-server-two.vercel.app/singleToys/${id}`)
       .then((res) => res.json())
       .then((result) => setToy(result))
       .catch((error) => console.log(error));
@@ -30,6 +30,7 @@ const SingleToy = () => {
           className="h-full w-full rounded-lg object-cover object-center"
           src={photoUrl}
           alt="car image"
+          loading="lazy"
         />
       </div>
       <div className="space-y-4 px-12 text-lg">

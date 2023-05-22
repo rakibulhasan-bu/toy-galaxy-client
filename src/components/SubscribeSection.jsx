@@ -1,14 +1,22 @@
 const SubscribeSection = () => {
   return (
     <section className="container mx-auto flex justify-between px-4 py-8 lg:mb-12 lg:px-6 lg:py-20">
-      <div className="ml-20 w-1/5 ">
+      <div
+        data-aos="fade-right"
+        data-aos-duration="3000"
+        className="ml-20 w-1/5 "
+      >
         <img
           className="h-full w-full rotate-45 object-cover"
           src="https://res.cloudinary.com/dwx2jd8b1/image/upload/v1684583889/Website-assets/Toy%20Galaxy/newsletter_1_lzffso.png"
           alt=""
         />
       </div>
-      <div className="mx-auto max-w-screen-lg  sm:text-center">
+      <div
+        data-aos="fade-left"
+        data-aos-duration="3000"
+        className="mx-auto max-w-screen-lg  sm:text-center"
+      >
         <h2 className="mb-4 text-3xl font-semibold tracking-tight text-gray-900  md:text-4xl">
           Join Our <span className="gradient">Toy Galaxy</span> Community
         </h2>

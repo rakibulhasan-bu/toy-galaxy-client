@@ -19,6 +19,7 @@ const ContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [blog, setBlog] = useState({});
 
   const googleSignUp = () => {
     setLoading(true);
@@ -58,6 +59,8 @@ const ContextProvider = ({ children }) => {
     setLoading,
     error,
     setError,
+    blog,
+    setBlog,
   };
   return (
     <AuthContext.Provider value={contextInfo}>{children}</AuthContext.Provider>

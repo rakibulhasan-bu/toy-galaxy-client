@@ -48,7 +48,11 @@ const Register = () => {
 
   return (
     <div className="flex h-full w-full items-center justify-center bg-gradient-to-tl from-blue-400 to-blue-50 px-4 py-20">
-      <div className="w-full rounded bg-white p-10  shadow hover:shadow-2xl md:w-1/2 lg:w-2/5">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="3000"
+        className="w-full rounded bg-white p-10  shadow hover:shadow-2xl md:w-1/2 lg:w-2/5"
+      >
         <p
           aria-label="Login to your account"
           className="text-3xl font-bold leading-7 text-gray-800"

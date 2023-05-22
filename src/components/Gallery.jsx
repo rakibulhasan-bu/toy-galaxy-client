@@ -3,12 +3,12 @@ const Gallery = () => {
     {
       title: "Lightning Racer",
       subTitle: "Supersonic Lightning Speedster",
-      img: "https://res.cloudinary.com/dwx2jd8b1/image/upload/v1684585532/Website-assets/Toy%20Galaxy/Lightning_Racer_cwkygm.jpg",
+      img: "https://res.cloudinary.com/dwx2jd8b1/image/upload/v1684751098/Website-assets/Toy%20Galaxy/Lightning_Racer_mla5ph.jpg",
     },
     {
       title: "Turbo Tornado",
       subTitle: "Thrilling Turbocharged Tornado",
-      img: "https://res.cloudinary.com/dwx2jd8b1/image/upload/v1684602183/Website-assets/Toy%20Galaxy/Turbo_Tornado_u1hh6b.jpg",
+      img: "https://res.cloudinary.com/dwx2jd8b1/image/upload/v1684751178/Website-assets/Toy%20Galaxy/Turbo_Tornado_u1hh6b_asyx3n.jpg",
     },
     {
       title: "Monster Crusher",
@@ -18,7 +18,7 @@ const Gallery = () => {
     {
       title: "Fire Blaster ",
       subTitle: "Blazing Fire-Rescue Hero",
-      img: "https://res.cloudinary.com/dwx2jd8b1/image/upload/v1684602307/Website-assets/Toy%20Galaxy/Fire_Blaster_y35efl.jpg",
+      img: "https://res.cloudinary.com/dwx2jd8b1/image/upload/v1684751709/Website-assets/Toy%20Galaxy/Screenshot_195_vijkwe.png",
     },
     {
       title: "LEGO Technic",
@@ -28,7 +28,7 @@ const Gallery = () => {
     {
       title: "Turbocharged Thunder",
       subTitle: "Speedy Thunderbolt Racer",
-      img: "https://res.cloudinary.com/dwx2jd8b1/image/upload/v1684602446/Website-assets/Toy%20Galaxy/Turbocharged_Thunder_o25hvi.jpg",
+      img: "https://res.cloudinary.com/dwx2jd8b1/image/upload/v1684751020/Website-assets/Toy%20Galaxy/Turbocharged_Thunder-min_1_o70oqe.jpg",
     },
     // {
     //   title: "Dino Roamer",
@@ -51,7 +51,11 @@ const Gallery = () => {
         Explore Captivating Moments and Adventures in our Toy Galaxy Gallery
       </p>
 
-      <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 xl:mt-12 xl:grid-cols-3">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="2000"
+        className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 xl:mt-12 xl:grid-cols-3"
+      >
         {carsImage &&
           carsImage.map((car, i) => (
             <div key={i} className="relative flex h-72">

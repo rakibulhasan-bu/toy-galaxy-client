@@ -10,6 +10,8 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import PrivateRoute from "./PrivateRoute";
 import SingleToy from "../pages/SingleToy";
+import SingleBlog from "../components/SingleBlog";
+import CreateBlog from "../components/CreateBlog";
 
 const router = createBrowserRouter([
   {
@@ -52,6 +54,16 @@ const router = createBrowserRouter([
       {
         path: "/blogs",
         element: <Blogs />,
+        children: [
+          {
+            path: "/blogs/singleBlog",
+            element: <SingleBlog />,
+          },
+          {
+            path: "/blogs/createBlog",
+            element: <CreateBlog />,
+          },
+        ],
       },
       {
         path: "/login",

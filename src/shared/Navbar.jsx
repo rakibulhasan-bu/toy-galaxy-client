@@ -5,13 +5,12 @@ import { AuthContext } from "../contexts/ContextProvider";
 const Navbar = () => {
   const [sticky, setSticky] = useState(false);
   const { user, logOut } = useContext(AuthContext);
+  const { displayName, photoURL } = user || {};
   const handleLogOut = () => {
     logOut()
       .then((result) => console.log(result))
       .catch((error) => console.log(error));
   };
-  const photoUrl = `"${user?.photoURL}"`;
-  // console.log(("src", photoUrl));
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,9 +45,9 @@ const Navbar = () => {
                   Log out
                 </NavLink>
                 <img
-                  src={photoUrl}
+                  src={photoURL}
                   className="h-8 w-8 cursor-pointer rounded-full bg-grey"
-                  title={user?.displayName}
+                  title={displayName}
                 />
               </div>
             ) : (

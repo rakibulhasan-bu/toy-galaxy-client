@@ -20,7 +20,11 @@ const Faqs = () => {
       </div>
 
       <div className="mt-8 flex flex-col md:mt-14 md:flex-row md:space-x-8">
-        <div className="h-[70vh] w-full md:w-5/12 lg:w-6/12">
+        <div
+          data-aos="fade-right"
+          data-aos-duration="3000"
+          className="h-[70vh] w-full md:w-5/12 lg:w-6/12"
+        >
           <img
             src="https://res.cloudinary.com/dwx2jd8b1/image/upload/v1684578170/Website-assets/Toy%20Galaxy/AdobeStock_224196166_zqstcr.jpg"
             alt="Img of child with car toys"
@@ -28,7 +32,11 @@ const Faqs = () => {
           />
         </div>
 
-        <div className="mt-10 w-full sm:mt-14 md:mt-6 md:w-7/12 lg:w-8/12">
+        <div
+          data-aos="fade-left"
+          data-aos-duration="3000"
+          className="mt-10 w-full sm:mt-14 md:mt-6 md:w-7/12 lg:w-8/12"
+        >
           {/* <!-- Section 1--> */}
           <div>
             <div className=" flex cursor-pointer items-center justify-between">

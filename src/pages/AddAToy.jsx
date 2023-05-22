@@ -10,7 +10,7 @@ const AddAToy = () => {
 
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/addAToy", {
+    fetch("https://toy-galaxy-server-two.vercel.app/addAToy", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -39,7 +39,11 @@ const AddAToy = () => {
   return (
     <>
       <div className="h-96 w-full bg-gradient-to-br from-cyan-200 to-blue-950">
-        <div className="flex w-full items-center justify-center">
+        <div
+          data-aos="fade-up"
+          data-aos-duration="2000"
+          className="flex w-full items-center justify-center"
+        >
           <div className="absolute top-40 w-3/5 rounded-lg bg-white px-8 py-12 shadow-xl lg:px-20">
             <p className="pb-6 text-center text-xl font-bold leading-7 text-gray-700 md:text-3xl">
               Add Your Products to
