@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 const SingleToy = () => {
+  document.title = "Toy details | Toy Galaxy";
   const [toy, setToy] = useState({});
   const {
     subCategory,

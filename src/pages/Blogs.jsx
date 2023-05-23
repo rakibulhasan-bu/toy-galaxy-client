@@ -3,7 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 import { AuthContext } from "../contexts/ContextProvider";
 
 const Blogs = () => {
-  document.title = "Blogs - Toy Galaxy";
+  document.title = "Blogs | Toy Galaxy";
   const [blogs, setBlogs] = useState([]);
   const [control, setControl] = useState(false);
   const { setBlog } = useContext(AuthContext);

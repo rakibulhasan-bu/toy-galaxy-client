@@ -6,7 +6,7 @@ import withReactContent from "sweetalert2-react-content";
 import UpdateToyModal from "../components/UpdateToyModal";
 
 const MyToys = () => {
-  document.title = "My Toys - Toy Galaxy";
+  document.title = "My Toys | Toy Galaxy";
   const { user } = useContext(AuthContext);
   const { email, displayName, photoURL } = user || {};
   const [myToys, setMyToys] = useState([]);

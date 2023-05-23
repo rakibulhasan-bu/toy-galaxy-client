@@ -28,25 +28,6 @@ html {
   .sticky {
     @apply fixed left-0 top-0 bg-gradient-to-br from-blue-50 to-cyan-50 shadow-md;
   }
-  .section {
-    @apply py-12 lg:py-24;
-  }
-  .section-title {
-    @apply mb-6 text-2xl font-bold leading-normal lg:text-[40px];
-  }
-  .section-subtitle {
-    @apply mb-8 mt-6 text-gray;
-  }
-  .input,
-  .select {
-    @apply h-[38px] w-full border-b border-gray text-xl text-darkblue outline-none;
-  }
-  .input {
-    @apply bg-transparent lg:max-w-[410px];
-  }
-  .select {
-    @apply cursor-pointer lg:max-w-[200px];
-  }
 }
 
 .icon {

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const AllToys = () => {
-  document.title = "All Toys - Toy Galaxy";
+  document.title = "All Toys | Toy Galaxy";
   const [allToys, setAllToys] = useState([]);
   // const { photoURL } = user;
   useEffect(() => {

@@ -15,11 +15,11 @@ const Gallery = () => {
       subTitle: "Mighty Monster Crusher Machine",
       img: "https://res.cloudinary.com/dwx2jd8b1/image/upload/v1684602263/Website-assets/Toy%20Galaxy/Monster_Crusher_vuyvei.jpg",
     },
-    {
-      title: "Fire Blaster ",
-      subTitle: "Blazing Fire-Rescue Hero",
-      img: "https://res.cloudinary.com/dwx2jd8b1/image/upload/v1684751709/Website-assets/Toy%20Galaxy/Screenshot_195_vijkwe.png",
-    },
+    // {
+    //   title: "Fire Blaster ",
+    //   subTitle: "Blazing Fire-Rescue Hero",
+    //   img: "https://res.cloudinary.com/dwx2jd8b1/image/upload/v1684751709/Website-assets/Toy%20Galaxy/Screenshot_195_vijkwe.png",
+    // },
     {
       title: "LEGO Technic",
       subTitle: "Ultra-Fast Speed Demon",
@@ -35,11 +35,11 @@ const Gallery = () => {
     //   subTitle: "Roaring Dino Adventure Car",
     //   img: "https://res.cloudinary.com/dwx2jd8b1/image/upload/v1684602581/Website-assets/Toy%20Galaxy/Dino_Roamer_xvd1yi.jpg",
     // },
-    // {
-    //   title: "Rocket Racer",
-    //   subTitle: "Epic Rocket-Powered Speedster",
-    //   img: "https://res.cloudinary.com/dwx2jd8b1/image/upload/v1684602637/Website-assets/Toy%20Galaxy/Rocket_Racer_ovzx6n.jpg",
-    // },
+    {
+      title: "Rocket Racer",
+      subTitle: "Epic Rocket-Powered Speedster",
+      img: "https://res.cloudinary.com/dwx2jd8b1/image/upload/v1684602637/Website-assets/Toy%20Galaxy/Rocket_Racer_ovzx6n.jpg",
+    },
   ];
   return (
     <section className="container mx-auto px-6 py-16">

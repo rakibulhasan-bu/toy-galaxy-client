@@ -1,11 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { useContext, useState } from "react";
 import { AuthContext } from "../contexts/ContextProvider";
 import { updateProfile } from "firebase/auth";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 const Register = () => {
+  document.title = "Register | Toy Galaxy";
+  const MySwal = withReactContent(Swal);
+  const location = useLocation();
+  const navigate = useNavigate();
+  console.log(location);
   const { googleSignUp, registerAccount, auth } = useContext(AuthContext);
   const [hide, setHide] = useState(true);
   const {
@@ -15,26 +22,39 @@ const Register = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    document.title = "Register - Toy Galaxy";
     const { name, email, password, photoUrl } = data;
     console.log(name, photoUrl);
     registerAccount(email, password)
       .then((result) => {
-        const registeredUser = result.user;
         reset();
-        console.log(registeredUser);
+        {
+          result &&
+            MySwal.fire(
+              "Congratulations!",
+              `Register successful. Welcome to Toy Galaxy!`,
+              "success"
+            );
+        }
         updateProfile(auth.currentUser, {
           displayName: `${name}`,
           photoURL: `${photoUrl}`,
         })
           .then(() => {
             console.log("profile updated");
+            navigate("/", { replace: true });
           })
           .catch((error) => {
             console.log(error);
           });
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        error &&
+          MySwal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Your password or name already-in-use",
+          });
+      });
   };
 
   const handleGoogleSignUp = () => {
@@ -136,6 +156,7 @@ const Register = () => {
                     "Minimum eight characters, at least one letter and one number",
                 },
               })}
+              autoComplete="current-password"
               aria-label="enter Password"
               type={hide ? "password" : "text"}
               placeholder="Please enter your password"

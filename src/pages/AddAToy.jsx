@@ -4,7 +4,7 @@ import { AuthContext } from "../contexts/ContextProvider";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 const AddAToy = () => {
-  document.title = "Add A Toy - Toy Galaxy";
+  document.title = "Add A Toy | Toy Galaxy";
   const { user } = useContext(AuthContext);
   const MySwal = withReactContent(Swal);
 

@@ -3,9 +3,12 @@ import { useForm } from "react-hook-form";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { useContext, useState } from "react";
 import { AuthContext } from "../contexts/ContextProvider";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 const Login = () => {
-  document.title = "Login - Toy Galaxy";
+  document.title = "Login | Toy Galaxy";
+  const MySwal = withReactContent(Swal);
   const [hide, setHide] = useState(true);
   const { googleSignUp, signIn, setUser } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -18,21 +21,39 @@ const Login = () => {
         setUser(user);
         navigate(from, { replace: true });
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        error &&
+          MySwal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Your password or name is invalid",
+          });
+      });
   };
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
     signIn(data?.email, data?.password)
       .then((result) => {
         const loggedUser = result.user;
         reset();
         setUser(loggedUser);
+        MySwal.fire(
+          "Congratulations!",
+          `Login successful. Welcome, ${result.user?.displayName}!`,
+          "success"
+        );
         navigate(from, { replace: true });
       })
       .catch((error) => {
-        const errorMessage = error.message;
-        console.log(errorMessage);
+        {
+          error &&
+            MySwal.fire({
+              icon: "error",
+              title: "Oops...",
+              text: "Your password or name is invalid",
+            });
+        }
       });
   };
   return (
@@ -116,6 +137,7 @@ const Login = () => {
               placeholder="Please enter your password"
               className="inputStyle"
               required
+              autoComplete="current-password"
             />
             <div className="absolute right-0 mr-3 mt-1 cursor-pointer text-xl">
               {hide ? (
