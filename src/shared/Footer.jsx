@@ -6,10 +6,10 @@ const Footer = () => {
       <div className="container mx-auto px-4 pt-8 sm:px-6 lg:px-8">
         {/* this is upper part of footer  */}
         <div className="flex flex-col gap-x-8 lg:flex-row">
-          <div className="w-5/12">
+          <div className="w-full lg:w-5/12">
             <NavLink to="/">
               <img
-                className="-ml-20 h-20 w-full object-cover"
+                className="h-20 w-full object-cover lg:-ml-20"
                 src="https://res.cloudinary.com/dwx2jd8b1/image/upload/v1684397704/Website-assets/Toy%20Galaxy/logo_ymxuub.png"
                 alt="This is logo image"
               />
@@ -25,11 +25,11 @@ const Footer = () => {
                 <input
                   id="email"
                   type="email"
-                  className="w-72 rounded-md border bg-white px-4 py-2 text-gray-700 focus:border-blue-400 focus:outline-none "
+                  className="rounded-md border bg-white px-4 py-2 text-gray-700 focus:border-blue-400 focus:outline-none lg:w-72 "
                   placeholder="Email Address"
                 />
 
-                <button className="btn w-full font-medium md:mx-4 md:w-auto">
+                <button className="btn font-medium md:mx-4 md:w-auto lg:w-full">
                   Subscribe
                 </button>
               </div>
@@ -123,7 +123,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="grid w-7/12 grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
+          <div className="grid w-full grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:w-7/12">
             {/* about us section here  */}
             <div className="text-center sm:text-left">
               <p className="text-lg font-medium text-gray-900">About Us</p>

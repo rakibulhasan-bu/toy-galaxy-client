@@ -44,14 +44,17 @@ const AddAToy = () => {
           data-aos-duration="2000"
           className="flex w-full items-center justify-center"
         >
-          <div className="absolute top-40 w-3/5 rounded-lg bg-white px-8 py-12 shadow-xl lg:px-20">
-            <p className="pb-6 text-center text-xl font-bold leading-7 text-gray-700 md:text-3xl">
+          <div className="absolute top-20 w-11/12 rounded-lg bg-white px-6 py-8 shadow-xl lg:top-40 lg:w-3/5 lg:px-20">
+            <p className="pb-0 text-center text-xl font-bold leading-7 text-gray-700 md:text-3xl lg:pb-6">
               Add Your Products to
               <span className="gradient font-bold"> Toy Galaxy!</span>
             </p>
 
             {/* form start here  */}
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              className="space-y-4 lg:space-y-8"
+            >
               {/* this are hidden div  */}
               <div className="hidden">
                 <input
@@ -65,7 +68,7 @@ const AddAToy = () => {
                   value={user && user?.email}
                 />
               </div>
-              <div className="grid grid-cols-1 gap-x-6 lg:grid-cols-2">
+              <div className="grid grid-cols-1 gap-y-4 lg:grid-cols-2 lg:gap-x-6">
                 <input
                   {...register("name")}
                   aria-label="enter name"
@@ -83,7 +86,7 @@ const AddAToy = () => {
                   className="inputStyle"
                 />
               </div>
-              <div className="grid grid-cols-1 gap-x-6 lg:grid-cols-2">
+              <div className="grid grid-cols-1 gap-y-4 lg:grid-cols-2 lg:gap-x-6">
                 <input
                   {...register("rating", { valueAsNumber: true })}
                   aria-label="enter rating"
@@ -103,7 +106,7 @@ const AddAToy = () => {
                   className="inputStyle"
                 />
               </div>
-              <div className="grid grid-cols-1 gap-x-6 lg:grid-cols-2">
+              <div className="grid grid-cols-1 gap-y-4 lg:grid-cols-2 lg:gap-x-6">
                 <input
                   {...register("photoUrl")}
                   aria-label="enter photoUrl"

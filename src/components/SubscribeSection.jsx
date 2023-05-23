@@ -1,10 +1,10 @@
 const SubscribeSection = () => {
   return (
-    <section className="container mx-auto flex justify-between px-4 py-8 lg:mb-12 lg:px-6 lg:py-20">
+    <section className="container mx-auto flex flex-col justify-between gap-y-4 px-4 py-8 lg:mb-12 lg:flex-row lg:gap-y-0 lg:px-6 lg:py-20">
       <div
         data-aos="fade-right"
         data-aos-duration="2000"
-        className="ml-20 w-1/5 "
+        className="ml-20 w-1/2 lg:w-1/5"
       >
         <img
           className="h-full w-full rotate-45 object-cover"
@@ -15,7 +15,7 @@ const SubscribeSection = () => {
       <div
         data-aos="fade-left"
         data-aos-duration="2000"
-        className="mx-auto max-w-screen-lg  sm:text-center"
+        className="mx-auto sm:text-center lg:max-w-screen-lg"
       >
         <h2 className="mb-4 text-3xl font-semibold tracking-tight text-gray-900  md:text-4xl">
           Join Our <span className="gradient">Toy Galaxy</span> Community
@@ -25,7 +25,7 @@ const SubscribeSection = () => {
           Exciting Toy Galaxy Updates.
         </p>
         <form>
-          <div className="mx-auto mb-3 max-w-screen-sm items-center space-y-4 sm:flex sm:space-y-0">
+          <div className="mx-auto mb-3 items-center space-y-4 sm:flex sm:space-y-0 lg:max-w-screen-sm">
             <div className="relative w-full">
               <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                 <svg
@@ -47,11 +47,11 @@ const SubscribeSection = () => {
               />
             </div>
 
-            <button type="submit" className="btn rounded-s-none py-3">
+            <button type="submit" className="btn w-full rounded-s-none py-3">
               Subscribe
             </button>
           </div>
-          <div className="newsletter-form-footer mx-auto max-w-screen-sm text-left text-sm text-gray-500 dark:text-gray-300">
+          <div className="mx-auto text-left text-sm text-gray-500 lg:max-w-screen-sm">
             We care about the protection of your data.{" "}
             <span className="gradient cursor-pointer hover:underline-offset-1">
               Read our Privacy Policy

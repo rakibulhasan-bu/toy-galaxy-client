@@ -7,7 +7,7 @@ html {
 }
 
 .active {
-  @apply bg-gradient-to-r from-blue-400 to-blue-950 bg-clip-text font-semibold text-transparent;
+  @apply from-blue-400 to-blue-950 bg-clip-text font-semibold text-black lg:bg-gradient-to-r lg:text-transparent;
 }
 @layer base {
   body {
@@ -26,7 +26,7 @@ html {
     @apply w-full rounded-lg bg-blue-100 py-3.5 pl-3 leading-none text-gray-800 focus:outline-none;
   }
   .sticky {
-    @apply fixed left-0 top-0 bg-gradient-to-br from-blue-50 to-cyan-50 shadow-md;
+    @apply bg-gradient-to-br from-blue-50 to-cyan-50 shadow-md lg:fixed lg:left-0 lg:top-0;
   }
 }
 

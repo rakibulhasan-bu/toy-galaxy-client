@@ -6,11 +6,11 @@ const Testimonials = () => {
         <span className="gradient font-semibold"> Happy Customers</span>
       </h1>
 
-      <p className="mx-auto mt-4 max-w-2xl text-center text-gray-500">
+      <p className="mx-auto mt-4 text-center text-gray-500 lg:max-w-2xl">
         Discover What Our Customers Have to Say About Their Toy Car Experience
       </p>
 
-      <div className="mx-auto mt-8 grid max-w-7xl grid-cols-1 gap-8 lg:grid-cols-2 xl:mt-10">
+      <div className="mx-auto mt-8 grid grid-cols-1 gap-8 lg:max-w-7xl lg:grid-cols-2 xl:mt-10">
         <div
           data-aos="fade-right"
           data-aos-duration="2000"

@@ -29,7 +29,7 @@ const GoToTop = () => {
     <div className="relative flex items-center justify-center">
       {isVisible && (
         <div
-          className="fixed bottom-20 right-7 z-10 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-gradient-to-br from-cyan-300 via-sky-500 to-blue-800 text-xl text-white shadow-2xl"
+          className="fixed bottom-20 right-3 z-10 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-gradient-to-br from-cyan-300 via-sky-500 to-blue-800 text-xl text-white shadow-2xl lg:right-7"
           onClick={goToBtn}
         >
           <FaArrowUp className="icon" />

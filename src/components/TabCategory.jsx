@@ -27,38 +27,38 @@ const TabCategory = () => {
       </div>
 
       <Tabs>
-        <TabList className="flex items-center justify-center gap-x-8">
+        <TabList className="flex flex-col items-center justify-center gap-y-4 lg:flex-row lg:gap-x-8">
           <Tab
             onClick={() => handleTabClick("Speedy_Racers")}
-            className="cursor-pointer text-lg font-semibold"
+            className="cursor-pointer text-base font-semibold lg:text-lg"
             selectedClassName="btnTab"
           >
             Speedy Racers
           </Tab>
           <Tab
             onClick={() => handleTabClick("Monster_Machines")}
-            className="cursor-pointer text-lg font-semibold"
+            className="cursor-pointer text-base font-semibold lg:text-lg"
             selectedClassName="btnTab"
           >
             Monster Machines
           </Tab>
           <Tab
             onClick={() => handleTabClick("Rescue_Heroes")}
-            className="cursor-pointer text-lg font-semibold"
+            className="cursor-pointer text-base font-semibold lg:text-lg"
             selectedClassName="btnTab"
           >
             Rescue Heroes
           </Tab>
           <Tab
             onClick={() => handleTabClick("Everyday_City_Cars")}
-            className="cursor-pointer text-lg font-semibold"
+            className="cursor-pointer text-base font-semibold lg:text-lg"
             selectedClassName="btnTab"
           >
             Everyday City Cars
           </Tab>
           <Tab
             onClick={() => handleTabClick("Construction_Crew")}
-            className="cursor-pointer text-lg font-semibold"
+            className="cursor-pointer text-base font-semibold lg:text-lg"
             selectedClassName="btnTab"
           >
             Construction Crew
@@ -68,35 +68,35 @@ const TabCategory = () => {
           <TabPanel
             data-aos="fade-up"
             data-aos-duration="2000"
-            className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4"
+            className="grid grid-cols-1 gap-8 px-4 md:grid-cols-2 lg:grid-cols-4"
           >
             {toys && toys.map((toy) => <CarCard key={toy._id} toy={toy} />)}
           </TabPanel>
           <TabPanel
             data-aos="fade-up"
             data-aos-duration="2000"
-            className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4"
+            className="grid grid-cols-1 gap-8 px-4 md:grid-cols-2 lg:grid-cols-4"
           >
             {toys && toys.map((toy) => <CarCard key={toy._id} toy={toy} />)}
           </TabPanel>
           <TabPanel
             data-aos="fade-up"
             data-aos-duration="2000"
-            className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4"
+            className="grid grid-cols-1 gap-8 px-4 md:grid-cols-2 lg:grid-cols-4"
           >
             {toys && toys.map((toy) => <CarCard key={toy._id} toy={toy} />)}
           </TabPanel>
           <TabPanel
             data-aos="fade-up"
             data-aos-duration="2000"
-            className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4"
+            className="grid grid-cols-1 gap-8 px-4 md:grid-cols-2 lg:grid-cols-4"
           >
             {toys && toys.map((toy) => <CarCard key={toy._id} toy={toy} />)}
           </TabPanel>
           <TabPanel
             data-aos="fade-up"
             data-aos-duration="2000"
-            className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4"
+            className="grid grid-cols-1 gap-8 px-4 md:grid-cols-2 lg:grid-cols-4"
           >
             {toys && toys.map((toy) => <CarCard key={toy._id} toy={toy} />)}
           </TabPanel>

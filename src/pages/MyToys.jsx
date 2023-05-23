@@ -120,7 +120,7 @@ const MyToys = () => {
       </div>
 
       {/* these is upper heading part  */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col items-center justify-between gap-4 pt-4 lg:flex-row lg:pt-0">
         <div className="flex items-center gap-x-3">
           <h2 className="text-lg font-medium text-gray-800 dark:text-white">
             You added Products:

@@ -8,7 +8,7 @@ const Faqs = () => {
   const [show4, setShow4] = useState(false);
 
   return (
-    <div className="px-4 py-9 md:px-6 md:pb-20 md:pt-16 lg:px-20 2xl:mx-auto">
+    <div className="px-4 py-9 md:px-6 md:pb-20 md:pt-16 lg:px-20 ">
       <div className="space-y-2 text-center">
         <h2 className="text-4xl font-semibold leading-10 text-gray-800">
           Frequently Asked <span className="gradient">Questions</span>
