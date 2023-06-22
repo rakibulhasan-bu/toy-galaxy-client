@@ -6,7 +6,7 @@
     Toy Galaxy aims to provide a enjoyable and safe online marketplace for the world of toy cars.
     <br/>
     <br/>
-    <a href="https://savoir-cuisiner.web.app/">View Live site</a>
+    <a href="https://toy-galaxy-c7132.web.app/">View Live site</a>
     .
   </p>
 </p>
@@ -20,7 +20,7 @@
 
 ## About The Project
 
-![Screen Shot](https://res.cloudinary.com/dwx2jd8b1/image/upload/v1683263198/Rakibul_Hasan/Screenshot_188_xkalsa.png)
+![Screen Shot](https://res.cloudinary.com/dwx2jd8b1/image/upload/v1687443946/Website-assets/Toy%20Galaxy/Screenshot_20_jgsghg.png)
 
 Toy Galaxy is an exciting online project that focuses on creating a vibrant marketplace specifically for toy cars. Its main objective is to provide a platform where buyers can browse, explore, and purchase a wide range of toy cars while offering sellers an opportunity to showcase and sell their products.
 

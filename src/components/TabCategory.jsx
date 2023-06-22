@@ -73,29 +73,29 @@ const TabCategory = () => {
             {toys && toys.map((toy) => <CarCard key={toy._id} toy={toy} />)}
           </TabPanel>
           <TabPanel
-            data-aos="fade-up"
-            data-aos-duration="2000"
+            // data-aos="fade-up"
+            // data-aos-duration="2000"
             className="grid grid-cols-1 gap-8 px-4 md:grid-cols-2 lg:grid-cols-4"
           >
             {toys && toys.map((toy) => <CarCard key={toy._id} toy={toy} />)}
           </TabPanel>
           <TabPanel
-            data-aos="fade-up"
-            data-aos-duration="2000"
+            // data-aos="fade-up"
+            // data-aos-duration="2000"
             className="grid grid-cols-1 gap-8 px-4 md:grid-cols-2 lg:grid-cols-4"
           >
             {toys && toys.map((toy) => <CarCard key={toy._id} toy={toy} />)}
           </TabPanel>
           <TabPanel
-            data-aos="fade-up"
-            data-aos-duration="2000"
+            // data-aos="fade-up"
+            // data-aos-duration="2000"
             className="grid grid-cols-1 gap-8 px-4 md:grid-cols-2 lg:grid-cols-4"
           >
             {toys && toys.map((toy) => <CarCard key={toy._id} toy={toy} />)}
           </TabPanel>
           <TabPanel
-            data-aos="fade-up"
-            data-aos-duration="2000"
+            // data-aos="fade-up"
+            // data-aos-duration="2000"
             className="grid grid-cols-1 gap-8 px-4 md:grid-cols-2 lg:grid-cols-4"
           >
             {toys && toys.map((toy) => <CarCard key={toy._id} toy={toy} />)}
